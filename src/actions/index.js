@@ -3,6 +3,7 @@ import DataApi from '../api/dataApi';
 export const RESIZE_SCREEN = 'RESIZE_SCREEN';
 export const LOAD_DATA_ASYNC = 'LOAD_DATA_ASYNC';
 export const LOAD_DATA = 'LOAD_DATA';
+export const CHANGE_DATA_TYPE = "CHANGE_DATA_TYPE";
 
 export function resizeScreen(width, height) {
     return {
@@ -28,4 +29,10 @@ export function loadAllDataAsync() {
           dispatch(loadData({data}));
       });
   };
+}
+export function changeDataType(showType) {
+    return {
+        type: CHANGE_DATA_TYPE,
+        showType
+    }
 }
