@@ -19,7 +19,7 @@ class Header extends Component {
 		        <ul>
 			        <li>
 			            <span>展示类型:</span>
-			           
+			          
 			            {" "}
 			            {filter.map((d,i)=>{
 			            	return (<g> <SelectDom key={i} dataType={d}/>{(i!=filter.length-1)?"/ ":""}</g>)
