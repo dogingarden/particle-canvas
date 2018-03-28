@@ -8,6 +8,7 @@ import AppContainer from './containers/AppContainer';
 import { resizeScreen ,loadAllDataAsync} from './actions';
 import store from './MyStore/store'
 
+import "./main.less";
 
 const app = document.querySelectorAll('.main')[0];
 
