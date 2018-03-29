@@ -4,6 +4,9 @@ import ReactDOM from 'react-dom';
 
 import Preloader from '../utils/Preloader';
 import Header from './Header';
+import Canvas from './Canvas';
+import SelectDom from "../containers/Header/SelectContainer";
+import "./main.less"
 
 class App extends Component {
 
@@ -18,15 +21,29 @@ class App extends Component {
                 <Preloader />
             );
         }
-
+        let filter = ["aaaaa","baaaa","caaaa","daaaa"];
         return (
-          <div>
+          <div id="vis_container">
               <Header/>
-
-              <div>
-                <svg width="1100" height="1000" >
-                  
-                </svg> 
+              <div id="selectorcontainer">
+                <ul>
+                  <li>
+                      <span>展示类型:</span>
+                    
+                      {" "}
+                      {filter.map((d,i)=>{
+                        return (<span key={i}> <SelectDom dataType={d}/>{(i!=filter.length-1)?"/ ":""}</span>)
+                      })}
+                
+                  </li>
+              </ul>
+            </div>
+              <Canvas id="vis-canvas" width={this.props.width} height={this.props.height}/>
+              <div className="footer">
+                <div id="signature">
+                    <a href="vis27.com"><img id="logo" src="./colorful.logo.png"/></a>
+                    <div>Created by: @孔令远 </div>
+                </div>
               </div>
           </div>
         );

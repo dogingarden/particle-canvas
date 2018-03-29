@@ -18,12 +18,12 @@ ReactDOM.render(
 		<AppContainer/>
 	</Provider>, app);
 
-let onResize = function () {
-    store.dispatch(resizeScreen(window.innerWidth, window.innerHeight));
-}
+// let onResize = function () {
+//     store.dispatch(resizeScreen(window.innerWidth, window.innerHeight));
+// }
 
-onResize();
+// onResize();
 
-d3Select(window).on('resize', onResize);
+// d3Select(window).on('resize', onResize);
 
 store.dispatch(loadAllDataAsync());
