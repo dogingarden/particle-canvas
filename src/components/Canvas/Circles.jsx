@@ -14,7 +14,13 @@ class Circles extends React.Component {
   render() {
 
     const { circleSetting,width,height } = this.props;
-    const data=new Array(circleSetting.circleNum);
+    // const data=new Array(circleSetting.circleNum);
+    // data.map((d,i)=>{console.log(d)})
+    let data=[];
+    for (let i=0;i<circleSetting.circleNum;i++)
+    {
+      data.push(1);
+    }
     return (
       <Group>
         {data.map((d,i)=>{
