@@ -21,7 +21,7 @@ class App extends Component {
                 <Preloader />
             );
         }
-        let filter = ["aaaaa","baaaa","caaaa","daaaa"];
+        let filter = [{name:"无序状态",type:"random"},{name:"矩形布局",type:"rect"},{name:"圆形布局",type:"circle"},{name:"图案布局",type:"img"}];
         return (
           <div id="vis_container">
               <Header/>
@@ -32,12 +32,12 @@ class App extends Component {
                     
                       {" "}
                       {filter.map((d,i)=>{
-                        return (<span key={i}> <SelectDom dataType={d}/>{(i!=filter.length-1)?"/ ":""}</span>)
+                        return (<span key={i}> <SelectDom showType={d.type} dataName={d.name}/>{(i!=filter.length-1)?"/ ":""}</span>)
                       })}
                 
                   </li>
-              </ul>
-            </div>
+                </ul>
+              </div>
               <Canvas id="vis-canvas" width={this.props.width} height={this.props.height}/>
               <div className="footer">
                 <div id="signature">

@@ -7,29 +7,70 @@ import Konva from 'konva';
 import * as d3 from "d3";
 import { Group } from 'react-konva';
 
+import DataApi from '../../api/dataApi';
+
 class Circles extends React.Component {
   
+  /** setInterval返回一个整数，表示定时器的编号，以后可以用来取消这个定时器*/
+  startTicker() {
+
+      let data = DataApi.updateCirclesPosition(this.props.circlesData, this.props.width, this.props.height);
+      this.props.updateCirclesData(data);
+      this.requestID = requestAnimationFrame(this.startTicker);
+  }
+  componentDidMount() {
+
+      this.startTicker = this.startTicker.bind(this);
+      let props=this.props;
+      let data = DataApi.updateCirclesPosition(this.props.circlesData, this.props.width, this.props.height);
+      this.props.updateCirclesData(this.props.circlesData); /* 一开始发起一次请求*/
+
+      this.requestID = requestAnimationFrame(d=>{
+          let data = DataApi.updateCirclesPosition(props.circlesData, props.width, props.height);
+
+          props.updateCirclesData(data)
+      });
+      this.startTicker()
+  }
+  componentWillUnmount() {
+
+      window.cancelAnimationFrame(this.requestID);
+  }
+
+  componentWillReceiveProps(newProps) {
+    
+    const { showType } = this.props;
+    let props=this.props;
+    if(showType!==newProps.showType && newProps.showType !== "random"){
+      // window.cancelAnimationFrame(this.requestID);
+      if(newProps.showType=="rect"){
+        var data = DataApi.updateCirclesPositionRect(props.circlesData, props.width, props.height);
+        props.updateCirclesData(data)
+      }
+    }else if(showType!==newProps.showType && newProps.showType == "random"){
+      // this.startTicker()
+    }
+  }
+
+  conponentDidUpdate(){
+      // let props=this.props;
+      // console.log(props.dataType)
+  }
+
 
 
   render() {
 
-    const { circleSetting,width,height } = this.props;
-    // const data=new Array(circleSetting.circleNum);
-    // data.map((d,i)=>{console.log(d)})
-    let data=[];
-    for (let i=0;i<circleSetting.circleNum;i++)
-    {
-      data.push(1);
-    }
+    const { circleSetting,circlesData } = this.props;
+    
     return (
       <Group>
-        {data.map((d,i)=>{
+        {circlesData.map((d,i)=>{
           return (<Circle
                   key={i}
-                  x={d3.randomUniform(0, width)()}
-                  y={d3.randomUniform(0, height)()}
+                  x={d.x}
+                  y={d.y}
                   radius={circleSetting.radius}
-                  
                   fill={circleSetting.color}
                 />)
         })}

@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const SelectView = ({ active, dataType, onClick }) => {
+const SelectView = ({ active, showType, dataName,onClick }) => {
   if (active) {
-    return <span>{dataType}</span>
+    return <span>{dataName}</span>
   }
 
   return (
@@ -11,7 +11,7 @@ const SelectView = ({ active, dataType, onClick }) => {
       e.preventDefault()
       onClick()
     }}>
-     {dataType}
+     {dataName}
     </a>
   )
 }

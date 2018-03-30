@@ -3,13 +3,14 @@ import { changeDataType } from '../../actions'
 import SelectView from '../../components/Header/Select'
 
 const mapStateToProps = (state, ownProps) => ({
-  active: ownProps.dataType === state.showType,
-  dataType: ownProps.dataType
+  active: ownProps.showType === state.showType,
+  showType: ownProps.showType,
+  dataName: ownProps.dataName
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onClick: () => {
-    dispatch(changeDataType(ownProps.dataType))
+    dispatch(changeDataType(ownProps.showType))
   }
 });
 
