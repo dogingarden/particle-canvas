@@ -1,0 +1,349 @@
+[
+  { "name":"Continent",
+    "chineseName": "大洲",
+    "data":[
+          {
+            "Category": "Continent",
+            "chineseName": "亚洲",
+            "Subcategory": "Asia",
+            "Value": 60
+          },
+          {
+            "Category": "Continent",
+            "chineseName": "非洲",
+            "Subcategory": "Africa",
+            "Value": 16
+          },
+          {
+            "Category": "Continent",
+            "chineseName": "南美洲",
+            "Subcategory": "South America",
+            "Value": 9
+          },
+          {
+            "Category": "Continent",
+            "chineseName": "北美洲",
+            "Subcategory": "North America",
+            "Value": 5
+          },
+          {
+            "Category": "Continent",
+            "chineseName": "欧洲",
+            "Subcategory": "Europe",
+            "Value": 10
+          }
+          ]
+    },
+    { "name":"Gender",
+      "chineseName": "性别",
+    "data":[
+        {
+          "Category": "Gender",
+          "Subcategory": "Female",
+          "chineseName": "女性",
+          "Value": 50
+        },
+        {
+          "Category": "Gender",
+          "Subcategory": "Male",
+          "chineseName": "男性",
+          "Value": 50
+        }
+      ]},
+  { "name":"Age",
+    "chineseName": "年龄",
+    "data":[
+        {
+          "Category": "Age",
+          "chineseName": "0-14岁",
+          "Subcategory": "aged 0-14",
+          "Value": 25
+        },
+        {
+          "Category": "Age",
+          "Subcategory": "aged 15-64",
+          "chineseName": "15-64岁",
+          "Value": 66
+        },
+        {
+          "Category": "Age",
+          "Subcategory": "aged 65+",
+          "chineseName": "65岁以上",
+          "Value": 9
+        }]
+  },
+  { "name":"Religion",
+    "chineseName": "宗教",
+    "data":[
+        
+    {
+      "Category": "Religion",
+      "Subcategory": "Christians",
+      "chineseName": "基督教",
+
+      "Value": 31
+    },
+    {
+      "Category": "Religion",
+      "Subcategory": "Muslims",
+      "chineseName": "伊斯兰教",
+      "Value": 23
+    },
+    {
+      "Category": "Religion",
+      "Subcategory": "Hindus",
+      "chineseName": "印度教",
+      "Value": 15
+    },
+    {
+      "Category": "Religion",
+      "Subcategory": "Buddhists",
+      "chineseName": "佛教",
+      "Value": 7
+    },
+    {
+      "Category": "Religion",
+      "Subcategory": "Other",
+      "chineseName": "其它",
+      "Value": 8
+    },
+    {
+      "Category": "Religion",
+      "Subcategory": "No religion",
+      "chineseName": "无宗教信仰",
+      "Value": 16
+    }]
+    },
+  { "name":"Literacy",
+    "chineseName": "读写能力",
+    "data":[
+    {
+    "Category": "Literacy",
+    "Subcategory": "able to read & write",
+    "chineseName": "可以读写",
+    "Value": 86
+  },
+  {
+    "Category": "Literacy",
+    "Subcategory": "unable",
+    "chineseName": "不具备读写能力",
+    "Value": 14
+  }]
+  },
+  { "name":"College",
+    "chineseName": "学历",
+    "data":[
+        
+  {
+    "Category": "College",
+    "Subcategory": "have a college degree",
+    "chineseName": "大学学历",
+    "Value": 7
+  },
+  {
+    "Category": "College",
+    "Subcategory": "do not",
+    "chineseName": "没有大学学历",
+    "Value": 93
+  }]},
+
+  { "name":"Internet",
+    "chineseName": "网络",
+    "data":[
+        
+  {
+    "Category": "Internet",
+    "chineseName": "可以使用",
+    "Subcategory": "can access the internet",
+    "Value": 30
+  },
+  {
+    "Category": "Internet",
+    "Subcategory": "cannot access the internet",
+    "chineseName": "不能使用",
+    "Value": 70
+  }]},
+  { "name":"Phones",
+    "chineseName": "手机",
+    "data":[
+        
+  
+  {
+    "Category": "Phones",
+    "Subcategory": "have cell phones",
+    "chineseName": "有手机",
+    "Value": 75
+  },
+  {
+    "Category": "Phones",
+    "Subcategory": "do not",
+    "chineseName": "没有手机",
+    "Value": 25
+  }]},
+  { "name":"Water",
+    "chineseName": "饮用水",
+    "data":[
+        
+  
+  {
+    "Category": "Water",
+    "Subcategory": "have safe water",
+    "chineseName": "有安全用水",
+    "Value": 87
+  },
+  {
+    "Category": "Water",
+    "Subcategory": "do not",
+    "chineseName": "没有安全用水",
+    "Value": 13
+  }]},
+  { "name":"Poverty",
+    "chineseName": "贫穷状况",
+    "data":[
+        
+  {
+  
+    "Category": "Poverty",
+    "Subcategory": "live on less than 2 US dollars per day",
+    "chineseName": "生活费低于每天2美元",
+    "Value": 48
+  },{
+  
+    "Category": "Poverty",
+    "Subcategory": "live on more than 2 US dollars per day",
+    "chineseName": "生活费高于每天2美元",
+    "Value": 52
+  }
+  ]},
+  { "name":"Nutrition",
+    "chineseName": "营养状况",
+    "data":[
+        
+              {
+                "Category": "Nutrition",
+                "Subcategory": "overweight",
+                "chineseName": "超重",
+                "Value": 21
+              },
+              {
+                "Category": "Nutrition",
+                "Subcategory": "adequate",
+                "chineseName": "营养充足",
+                "Value": 63
+              },
+              {
+                "Category": "Nutrition",
+                "Subcategory": "undernourished",
+                "chineseName": "营养不良",
+                "Value": 15
+              },
+              {
+                "Category": "Nutrition",
+                "Subcategory": "starving",
+                "chineseName": "饥饿",
+                "Value": 1
+              }
+      ]
+  },
+
+
+  { "name":"Housing",
+    "chineseName": "住房",
+    "data":[
+        
+  
+  {
+    "Category": "Housing",
+    "chineseName": "没有住房",
+    "Subcategory": "have no shelter",
+    "Value": 23
+  },
+  {
+    "Category": "Housing",
+    "chineseName": "有住房",
+    "Subcategory": "have a place to shelter",
+    "Value": 77
+  }]},
+  { "name":"Language (first)",
+    "chineseName": "母语",
+    "data":[
+        
+  
+  {
+    "Category": "Language (first)",
+    "chineseName": "汉语",
+    "Subcategory": "Chinese",
+    "Value": 12
+  },
+  {
+    "Category": "Language (first)",
+    "Subcategory": "Spanish",
+    "chineseName": "西班牙语",
+    "Value": 6
+  },
+  {
+    "Category": "Language (first)",
+    "chineseName": "英语",
+    "Subcategory": "English",
+    "Value": 5
+  },
+  {
+    "Category": "Language (first)",
+    "chineseName": "阿拉伯语",
+    "Subcategory": "Arabic",
+    "Value": 3
+  },
+  {
+    "Category": "Language (first)",
+    "chineseName": "印地语",
+    "Subcategory": "Hindi",
+    "Value": 4
+  },
+  {
+    "Category": "Language (first)",
+    "chineseName": "孟加拉语",
+    "Subcategory": "Bengali",
+    "Value": 3
+  },
+  {
+    "Category": "Language (first)",
+    "chineseName": "葡萄牙语",
+    "Subcategory": "Portuguese",
+    "Value": 3
+  },
+  {
+    "Category": "Language (first)",
+    "Subcategory": "Russian",
+    "chineseName": "俄罗斯语",
+    "Value": 2
+  },
+  {
+    "Category": "Language (first)",
+    "Subcategory": "Japanese",
+    "chineseName": "日语",
+    "Value": 2
+  },
+  {
+    "Category": "Language (first)",
+    "Subcategory": "Other",
+    "chineseName": "其它",
+    "Value": 60
+  }]},
+  { "name":"Area",
+    "chineseName": "城乡",
+    "data":[
+        
+  
+  {
+    "Category": "Area",
+    "chineseName": "住在农村",
+    "Subcategory": "live in rural areas",
+    "Value": 46
+  },
+  {
+    "Category": "Area",
+    "chineseName": "住在城市",
+    "Subcategory": "live in urban areas",
+    "Value": 54
+  }]}
+]

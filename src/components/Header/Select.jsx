@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const SelectView = ({ active, showType, dataName,onClick }) => {
+const SelectView = ({ active, showType, dataName ,onClick }) => {
   if (active) {
     return <span>{dataName}</span>
   }

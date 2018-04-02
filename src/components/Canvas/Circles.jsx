@@ -39,16 +39,24 @@ class Circles extends React.Component {
 
   componentWillReceiveProps(newProps) {
     
-    const { showType } = this.props;
+    const { showType, data } = this.props;
     let props=this.props;
+
+    let showData=[];
+    data.forEach(d=>{
+      if(d.name==newProps.showType){
+        showData=d.data;
+      }
+    })
     if(showType!==newProps.showType && newProps.showType !== "random"){
       // window.cancelAnimationFrame(this.requestID);
-      if(newProps.showType=="rect"){
-        var data = DataApi.updateCirclesPositionRect(props.circlesData, props.width, props.height);
+      // if(newProps.showType=="rect"){
+        let data = DataApi.updateCirclesPositionRect(props.circlesData, props.width, props.height,showData);
         props.updateCirclesData(data)
-      }
+      // }
     }else if(showType!==newProps.showType && newProps.showType == "random"){
       // this.startTicker()
+      props.updateCirclesData(DataApi.setNormalOfAllParticle(props.circlesData));
     }
   }
 

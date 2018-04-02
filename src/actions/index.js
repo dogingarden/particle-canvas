@@ -26,7 +26,6 @@ export function loadAllDataAsync() {
     
     return DataApi.getAllDataAsync()
       .await((error,data) => {
-          
           dispatch(loadData({data}));
       });
   };

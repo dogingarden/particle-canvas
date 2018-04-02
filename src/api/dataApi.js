@@ -5,7 +5,7 @@ class DataApi{
 
 	static getAllDataAsync(){
 		return d3.queue()
-      		.defer(d3.csv, 'data.csv');
+      		.defer(d3.json, 'data.json');
 			
 	}
 	/**
@@ -30,37 +30,73 @@ class DataApi{
 		if((t /= d / 2) < 1) return c / 2 * (t * t * (((s *= (1.525)) + 1) * t - s)) + b;
 		return c / 2 * ((t -= 2) * t * (((s *= (1.525)) + 1) * t + s) + 2) + b;
 	}
-	static updateCirclesPositionRect(circlesData, width, height){
+	static updateCirclesPositionRect(circlesData, width, height, showData){
 
-		var h=10,w=10;
-		var r= store.getState().circleSetting.radius;
-		var top = (height - (h * (r * 2 + 2))) / 2;
-		var left = (width - (w * (r * 2 + 2))) / 2;
-		for(var i = 0; i < w; i++) {
-			for(var j = 0; j < h; j++) {
-				var ba = circlesData[i * h + j] || {};
-				ba.stauts = 1; // 更改状态，标记为特殊的粒子
-				// ba.tp = easeInOutCubic;
-				var tx = ba.x; // 当前的xy坐标
-				var ty = ba.y;
+		var num=0;
+		let h,w=10;
+		let r= store.getState().circleSetting.radius;
+		circlesData.sort((a,b)=>{
+			return Math.random() > 0.5 ? -1 : 1;
+		});
+		showData.forEach((d,i)=>{
+			
 
-				var zx = (r * 2 + 2) * i + left; // 计算应在所在的位置
-				var zy = (r * 2 + 2) * j + top;
 
-				var px = zx - tx; // 位移
-				var py = zy - ty;
+			let top = (height - (h * (r * 2 + 2))) / 2;
+			let left = (i+1)*width/(showData.length+1) - (w-1) * (r * 2 + 2) / 2;
+			let bottom = height*1/2-10;
 
-				ba.txb = ba.x; // 重新设置起点位置
-				ba.tyb = ba.y;
+			let circleNum = showData[i].Value;
+			
+			h=Math.ceil(circleNum/w);
+			for(var i = 0; i < h; i++) {
+				for(var j = 0; j < w; j++) {
+					// if((i)*w+j>d.Value)
+					// 	break;
+					var ba = circlesData[num + i * w + j] || {};
+					ba.stauts = 1; // 更改状态，标记为特殊的粒子
+					// ba.tp = easeInOutCubic;
+					var tx = ba.x; // 当前的xy坐标
+					var ty = ba.y;
 
-				ba.txc = px; // 重新设置位移
-				ba.tyc = py;
+					var zx = (r * 2 + 2) * j + left; // 计算应在所在的位置
+					var zy = -(r * 2 + 2) * i + bottom;
 
-				ba.tt = 0; // 重置开始时间 和 结束重置
-				ba.td = store.getState().circleSetting.duration / 6 * 60;
+					var px = zx - tx; // 位移
+					var py = zy - ty;
+
+					ba.txb = ba.x; // 重新设置起点位置
+					ba.tyb = ba.y;
+
+					ba.txc = px; // 重新设置位移
+					ba.tyc = py;
+
+					ba.tt = 0; // 重置开始时间 和 结束重置
+					ba.td = store.getState().circleSetting.duration / 6 * 60;
+				}
 			}
-		}
+			num+=circleNum;
+		});
 		return circlesData;
+	}
+	static setNormalOfAllParticle(data){
+		let duration = store.getState().circleSetting.duration;
+		let td=(duration + d3.randomUniform(-duration / 2, duration / 2)()) * 60;
+		let rangeRadius=1;
+		return data.map(function(d){
+			let td=(duration + d3.randomUniform(-duration / 2, duration / 2)()) * 60;
+			if(d.stauts==1){
+				d.stauts=0;
+				d.txb=d.x;
+				d.tyb=d.y;
+				d.txc=d3.randomUniform(-rangeRadius, rangeRadius)();
+				d.tyc=d3.randomUniform(-rangeRadius, rangeRadius)();
+				d.td=td;
+				d.tt=d3.randomUniform(0,td)();
+
+			}
+			return d;
+		})
 	}
 	static updateCirclesPosition(circlesData, width, height){
 		var data=circlesData.map(b=>{
@@ -104,9 +140,6 @@ class DataApi{
 				if(b.tt < b.td) {
 					b.tt++;
 				}
-			}
-			if(b.x<border||b.y<border){
-				console.log(b);
 			}
 			return b;
 		})

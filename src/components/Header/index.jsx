@@ -8,7 +8,7 @@ class Header extends Component {
 	
 	render() {
 		
-    	return <div className="title" >xxxxxxx</div>
+    	return <div className="title" >全球一百人</div>
 	     	
 	}
 }

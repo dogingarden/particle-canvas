@@ -9,16 +9,16 @@ const initialState = {
     isFetching :true,   //是否在加载
     showType: "random",   //展示数据类型
     circleSetting:{
-            "color": "#ea1212",         // （可选）粒子的颜色
-            "concentration": 0.5,       // （可选）浓度
-            "radius": 5,                // （可选）例子半径
-            "opacity": 0.9,             // （可选）粒子透明度
-            "duration": 6,             // （可选）运动的时间（秒）大概值不一定精确
-            "rangeRadius": 625,         // （可选）粒子运动的范围 
+            "color": "#ef6654",         // 颜色
+            "concentration": 0.5,       
+            "radius": 5,                // 半径
+            "opacity": 0.9,             //透明度
+            "duration": 6,             // 运动的时间
+            "rangeRadius": 625,         // 运动的范围 
             
             
     },
-    circlesNum:220,            //粒子个数
+    circlesNum:100,            //粒子个数
     circlesData:[]             //粒子对象存储数组
 };
 

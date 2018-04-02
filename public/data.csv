@@ -1,6 +1,46 @@
-name,num
-cn,13
-us,2
-ru,2
-jp,23
-
+Category,Subcategory,Value
+Continent,Asia,60
+Continent,Africa,16
+Continent,South America,9
+Continent,North America,5
+Continent,Europe,10
+Gender,Female,50
+Gender,Male,50
+Age,aged 0-14,25
+Age,aged 15-64,66
+Age,aged 65+,9
+Religion,Christians,31
+Religion,Muslims,23
+Religion,Hindus,15
+Religion,Buddhists,7
+Religion,Other,8
+Religion,No religion,16
+Literacy,able to read & write,86
+Literacy,unable,14
+College,have a college degree,7
+College,do not,93
+Internet,can access the internet,30
+Internet,cannot access the internet,70
+Phones,have cell phones,75
+Phones,do not,25
+Water,have safe water,87
+Water,do not,13
+Poverty,live on less than 2 US dollars per day,48
+Nutrition,overweight,21
+Nutrition,adequate,63
+Nutrition,undernourished,15
+Nutrition,starving,1
+Housing,have no shelter,23
+Housing,have a place to shelter,77
+Language (first),Chinese,12
+Language (first),Spanish,6
+Language (first),English,5
+Language (first),Arabic,3
+Language (first),Hindi,4
+Language (first),Bengali,3
+Language (first),Portuguese,3
+Language (first),Russian,2
+Language (first),Japanese,2
+Language (first),Other,60
+Area,live in rural areas,46
+Area,live in urban areas,54

@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => ({
   width: state.width,
   height: state.height,
   circlesData: state.circlesData,
-  showType: state.showType
+  showType: state.showType,
+  data: state.data
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

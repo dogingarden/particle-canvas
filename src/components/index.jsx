@@ -6,6 +6,9 @@ import Preloader from '../utils/Preloader';
 import Header from './Header';
 import Canvas from './Canvas';
 import SelectDom from "../containers/Header/SelectContainer";
+
+
+
 import "./main.less"
 
 class App extends Component {
@@ -16,12 +19,20 @@ class App extends Component {
     }
 
     render() {
-        if (this.props.isFetching) {
+        const {isFetching, showType, data} = this.props;
+        if (isFetching) {
             return (
                 <Preloader />
             );
         }
-        let filter = [{name:"无序状态",type:"random"},{name:"矩形布局",type:"rect"},{name:"圆形布局",type:"circle"},{name:"图案布局",type:"img"}];
+        let filter = [{name:"无序状态",type:"random"}];
+        let category = [];
+        data.forEach(d=>{
+          filter.push({name:d.chineseName,type:d.name});
+        });
+          
+        // let filter = [{name:"无序状态",type:"random"},{name:"矩形布局",type:"rect"},{name:"圆形布局",type:"circle"},{name:"图案布局",type:"img"}];
+        
         return (
           <div id="vis_container">
               <Header/>
@@ -38,7 +49,9 @@ class App extends Component {
                   </li>
                 </ul>
               </div>
-              <Canvas id="vis-canvas" width={this.props.width} height={this.props.height}/>
+              
+              <Canvas id="vis-canvas" showType = {this.props.showType} width={this.props.width} height={this.props.height}/>
+              
               <div className="footer">
                 <div id="signature">
                     <a href="vis27.com"><img id="logo" src="./colorful.logo.png"/></a>
