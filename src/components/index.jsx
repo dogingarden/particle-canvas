@@ -30,9 +30,6 @@ class App extends Component {
         data.forEach(d=>{
           filter.push({name:d.chineseName,type:d.name});
         });
-          
-        // let filter = [{name:"无序状态",type:"random"},{name:"矩形布局",type:"rect"},{name:"圆形布局",type:"circle"},{name:"图案布局",type:"img"}];
-        
         return (
           <div id="vis_container">
               <Header/>
